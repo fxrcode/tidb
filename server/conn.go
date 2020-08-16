@@ -1302,6 +1302,10 @@ func (cc *clientConn) handleIndexAdvise(ctx context.Context, indexAdviseInfo *ex
 // There is a special query `load data` that does not return result, which is handled differently.
 // Query `load stats` does not return result either.
 func (cc *clientConn) handleQuery(ctx context.Context, sql string) (err error) {
+	//logutil.BgLogger().Info("Hello sql [" + sql + "]")
+	if strings.ToUpper(sql) == "BEGIN" {
+		logutil.BgLogger().Info("Hello Transaction")
+	}
 	sc := cc.ctx.GetSessionVars().StmtCtx
 	prevWarns := sc.GetWarnings()
 	stmts, err := cc.ctx.Parse(ctx, sql)
