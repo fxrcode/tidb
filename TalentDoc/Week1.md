@@ -1,6 +1,8 @@
 # week 1 of High Performance TiDB 课程学习计划
 
-* Step 1: build modified tidb by calling `make`. Then tiup with the tidb binary file with pd, tikv from remote docker image:
+## Step 1: build modified tidb by calling `make`. Then tiup with the tidb binary file with pd, tikv from remote docker image:
+
+```
 $ tiup playground --db.binpath ./bin/tidb-server --db 1 --pd 1 --kv 3
 Starting component `playground`:  --db.binpath ./bin/tidb-server --db 1 --pd 1 --kv 3
 Use the latest stable version: v4.0.4
@@ -26,9 +28,11 @@ To connect TiDB: mysql --host 127.0.0.1 --port 4000 -u root
 To view the dashboard: http://127.0.0.1:2379/dashboard
 To view the Prometheus: http://127.0.0.1:9090
 To view the Grafana: http://127.0.0.1:3000
+```
 
-* Step2: connect to DB,
-# fxrc @ pop in ~/Projects/PingCapTalent/tidb on git:hp-week-1 o [1:38:08]
+## Step2: connect to DB,
+```
+fxrc @ pop in ~/Projects/PingCapTalent/tidb on git:hp-week-1 o [1:38:08]
 $ mysql -h127.0.0.1 -P4000 -uroot test
 
 Welcome to the MySQL monitor.  Commands end with ; or \g.
@@ -75,9 +79,10 @@ Empty set (0.00 sec)
 mysql> begin;
 Query OK, 0 rows affected (0.00 sec)
 
-mysql> 
+mysql>
+```
 
-* Step3: open the dashboard -> search logs -> instance (All TiDB)
+## Step3: open the dashboard -> search logs -> instance (All TiDB)
 ![image](image.png)
 
 
